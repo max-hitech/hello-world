@@ -1,0 +1,132 @@
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Application',
+      theme: ThemeData(primarySwatch:Colors.deepPurple ),
+      home: General(),);}}
+
+class General extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Инфо'),
+      ),
+      body: Container(
+          child: _info()
+      ),
+    );
+  }
+
+  Widget _info() =>
+      ListView(
+        children: [
+          Text('Клиенты', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+          clients(),
+          SizedBox(height: 30,),
+          Text('Заявки', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+          orders(),
+          SizedBox(height: 30,),
+          Text('Фирма', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+          company()
+        ]
+      );
+}
+
+Widget clients() => Container(
+child: Row(
+children: <Widget>[
+Container(
+decoration: BoxDecoration(border: Border.all()),
+padding: const EdgeInsets.all(10),
+child: Text('Название'),
+),
+Container(
+decoration: BoxDecoration(border: Border.all()),
+padding: const EdgeInsets.all(10),
+child: Text('Почта'),
+),
+Container(
+decoration: BoxDecoration(border: Border.all()),
+padding: const EdgeInsets.all(10),
+child: Text('Телефон'),
+),
+],
+),
+);
+Widget orders() => Container(
+  child: Row(
+    children: <Widget>[
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('Клиент'),
+      ),
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('Тип услуги'),
+      ),
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('Сумма'),
+      ),
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('Процент'),
+      )
+    ],
+  ),
+);
+
+Widget company() => Container(
+  child: Row(
+    children: <Widget>[
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('Название'),
+      ),
+      Container(
+        decoration: BoxDecoration(border: Border.all()),
+        padding: const EdgeInsets.all(10),
+        child: Text('ИНН'),
+      )
+    ],
+  ),
+);
+
+/*List<Widget> myCompany = [
+  CompanyData('Амазон', '873839')
+];
+
+Widget buildCompany() => Column(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: <Widget>[
+   CompanyData('Альянс', '6374838'),
+    CompanyData('Альянс', '6374838')
+  ],
+);
+
+
+Widget CompanyData(String title,String inn) => Row(
+  children: <Widget>[
+    Text(title),
+    Text(inn)
+  ],
+);
+
+*/
+
+
+
+
+
+
+
+
